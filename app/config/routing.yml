@@ -1,0 +1,4 @@
+user_paper:
+    resource: "@UserPaperBundle/Resources/config/routing.yml"
+    prefix:   /
+

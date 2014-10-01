@@ -1,0 +1,3 @@
+user_paper_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: UserPaperBundle:Default:index }

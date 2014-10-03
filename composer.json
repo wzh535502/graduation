@@ -1,59 +1,96 @@
 {
-    "name": "symfony/framework-standard-edition",
-    "license": "MIT",
-    "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
-    "autoload": {
-        "psr-0": { "": "src/", "SymfonyStandard": "app/" }
-    },
-    "require": {
-        "php": ">=5.3.3",
-        "symfony/symfony": "2.5.*",
-        "doctrine/orm": "~2.2,>=2.2.3",
-        "doctrine/doctrine-bundle": "~1.2",
-        "twig/extensions": "~1.0",
-        "symfony/assetic-bundle": "~2.3",
-        "symfony/swiftmailer-bundle": "~2.3",
-        "symfony/monolog-bundle": "~2.4",
-        "sensio/distribution-bundle": "~3.0",
-        "sensio/framework-extra-bundle": "~3.0",
-        "incenteev/composer-parameter-handler": "~2.0"
-    },
-    "require-dev": {
-        "sensio/generator-bundle": "~2.3"
-    },
-    "scripts": {
-        "post-root-package-install": [
-            "SymfonyStandard\\Composer::hookRootPackageInstall"
-        ],
-        "post-install-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
-        ],
-        "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
-        ]
-    },
-    "config": {
-        "bin-dir": "bin"
-    },
-    "extra": {
-        "symfony-app-dir": "app",
-        "symfony-web-dir": "web",
-        "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
-        },
-        "branch-alias": {
-            "dev-master": "2.5-dev"
-        }
-    }
+	"name" : "symfony/framework-standard-edition",
+	"license" : "MIT",
+	"type" : "project",
+	"description" : "The \"Symfony Standard Edition\" distribution",
+	"autoload" : {
+		"psr-0" : {
+			"" : "src/",
+			"SymfonyStandard" : "app/"
+		}
+	},
+	"require" : {
+		"php" : ">=5.3.3",
+		"symfony/symfony" : "2.5.*",
+		"doctrine/orm" : "~2.2,>=2.2.3",
+		"doctrine/doctrine-bundle" : "~1.2",
+		"twig/extensions" : "~1.0",
+		"symfony/assetic-bundle" : "~2.3",
+		"symfony/swiftmailer-bundle" : "~2.3",
+		"symfony/monolog-bundle" : "~2.4",
+		"sensio/distribution-bundle" : "~3.0",
+		"sensio/framework-extra-bundle" : "~3.0",
+		"incenteev/composer-parameter-handler" : "~2.0",
+		"snc/redis-bundle": "2.0.*@dev",
+		"leaseweb/memcache-bundle": "1.1.*@dev",
+		"cboden/ratchet": "dev-master",
+		"guzzle/guzzle": "3.9.*@dev",
+		"hwi/oauth-bundle": "0.4.*@dev",
+		"kwattro/markdown-bundle": "dev-master",
+		"varspool/websocket-bundle": "dev-master",		
+		"marcelog/pami": "dev-master",
+		"sonata-project/admin-bundle": "2.4.*@dev",
+		"twbs/bootstrap": "3.2.*@dev",
+		"components/jquery": "dev-master",
+		"oldsound/rabbitmq-bundle": "1.6.*@dev",
+		"matyhtf/swoole_framework": "dev-master",
+		"elasticsearch/elasticsearch": "dev-master",
+		"bmatzner/jquery-ui-bundle": "dev-master",
+		"noiselabs/smarty-bundle": "1.2.*@dev",
+		"shark/simple_html_dom": "dev-master",
+		"phpoffice/phpexcel": "dev-master",
+		"phpoffice/phpword": "dev-master",
+		"michelf/php-markdown": "1.4.1",
+		"friendsofsymfony/jsrouting-bundle": "2.0.*@dev",
+		"problematic/acl-manager-bundle": "dev-master",
+		"afarkas/html5shiv": "dev-master",
+		"psliwa/pdf-bundle": "dev-master",
+		"fxp/composer-asset-plugin": "1.0.*@dev",
+		"blueimp/jquery-file-upload": "dev-master",
+		"google/apiclient": "1.0.*@dev",
+		"widop/google-analytics-bundle": "1.1.*@dev",
+		"yoozi/lbs": "1.0.*@dev",
+		"ob/highcharts-bundle": "1.2.*@dev",
+		"cboden/ratchet": "dev-master",
+		"doctrine/mongodb-odm": "1.0.*@dev",
+		"rackspace/php-opencloud": "dev-master",
+		"camdram/sphinx-realtime-bundle": "dev-master",
+		"egeloen/google-map-bundle": "2.2.*@dev",
+		"matyhtf/swoole_framework": "dev-master",
+		"d4rkstar/phpagi": "dev-master"
+	},
+	"require-dev" : {
+		"sensio/generator-bundle" : "~2.3"
+	},
+	"scripts" : {
+		"post-install-cmd" : [
+			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
+		],
+		"post-update-cmd" : [
+			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
+		]
+	},
+	"config" : {
+		"bin-dir" : "bin"
+	},
+	"extra" : {
+		"symfony-app-dir" : "app",
+		"symfony-web-dir" : "web",
+		"incenteev-parameters" : {
+			"file" : "app/config/parameters.yml"
+		},
+		"branch-alias" : {
+			"dev-master" : "2.5-dev"
+		}
+	}
 }

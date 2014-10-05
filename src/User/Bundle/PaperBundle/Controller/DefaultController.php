@@ -10,6 +10,7 @@ class DefaultController extends Controller
     {
     //	echo "<pre>" ;
     //	var_dump($request);
+    
     	$conn = $this->get('doctrine.dbal.default_connection');
     	$users = $conn->fetchAll('SELECT * FROM user');
     	var_dump($users);

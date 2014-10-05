@@ -34,7 +34,7 @@
 		"components/jquery" : "dev-master",
 		"oldsound/rabbitmq-bundle" : "1.6.*@dev",
 		"matyhtf/swoole_framework" : "dev-master",
-		"elasticsearch/elasticsearch" : "dev-master",	
+		"elasticsearch/elasticsearch" : "dev-master",
 		"shark/simple_html_dom" : "dev-master",
 		"phpoffice/phpexcel" : "dev-master",
 		"phpoffice/phpword" : "dev-master",

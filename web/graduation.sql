@@ -1,181 +1,181 @@
-/*´©¼şÊı¾İ¿â*/
+/*ç©¿ä»¶æ•°æ®åº“*/
 create database `graduation`;
-/*ÈËÔ±°´ÕÕÊ±¼äºÍ°à¼¶·Ö±í */
+/*äººå‘˜æŒ‰ç…§æ—¶é—´å’Œç­çº§åˆ†è¡¨ */
 
-/*È¨ÏŞ¿ØÖÆÖ÷±í**************---*/
+/*æƒé™æ§åˆ¶ä¸»è¡¨**************---*/
 
-/*ÓÃ»§±í*/
+/*ç”¨æˆ·è¡¨*/
 create table `users`(
-	`user_id` int unsigned not null auto_increment comment "ÓÃ»§ID",
-	`user_name` varchar(120) not null comment "ÓÃ»§Ãû",		
+	`user_id` int unsigned not null auto_increment comment "ç”¨æˆ·ID",
+	`user_name` varchar(120) not null comment "ç”¨æˆ·å",		
 	 primary key (`userid`)
 )engine=innodb default charset='utf8'
-/*½ÇÉ«±í*/
+/*è§’è‰²è¡¨*/
 create table `roles` (
-	`role_id` int unsigned not null auto_increment comment "½ÇÉ«ID",
-	`role_name` varchar(120) not null comment "½ÇÉ«Ãû³Æ",
-	`descript` varchar(120) comment "½ÇÉ«ÃèÊö"
+	`role_id` int unsigned not null auto_increment comment "è§’è‰²ID",
+	`role_name` varchar(120) not null comment "è§’è‰²åç§°",
+	`descript` varchar(120) comment "è§’è‰²æè¿°"
 	primary key ('roleid')
 )engine=innodb default charset='utf8'
-/*È¨ÏŞ±í*/
+/*æƒé™è¡¨*/
 create table `permissions`(
- `perm_id` int unsigned not null auto_increment comment "È¨ÏŞID",
- `perm_name` varchar(120)  not null comment "È«Ñ¡Ãû³Æ",
- `description` varchar(255) not null comment "È¨ÏŞÃèÊö",
+ `perm_id` int unsigned not null auto_increment comment "æƒé™ID",
+ `perm_name` varchar(120)  not null comment "å…¨é€‰åç§°",
+ `description` varchar(255) not null comment "æƒé™æè¿°",
  primary key (`permid`)
 )engine=innodb default charset='utf8'
-/*¹¦ÄÜ²Ù×÷±í*/
+/*åŠŸèƒ½æ“ä½œè¡¨*/
 create table `operates`(
-	`operate_id` int unsigned not null auto_increment comment "²Ù×÷id",
-	`operate_name` varchar(255) not null comment "²Ù×÷Ãû³Æ",
-	`operate_code` char(8) not null comment "²Ù×÷È¨ÏŞ´úÂë£¬Ê¹ÓÃ32Î»¶ş½øÖÆ±êÊ¶£¬´æ´¢Îª16½øÖÆÊıÖµ",
-	`intercept_url` varchar(255) comment "À¹½Øurl"
-	`parent_operate_id` int unsigned not null default '0' comment "¸¸²Ù×÷ID",
+	`operate_id` int unsigned not null auto_increment comment "æ“ä½œid",
+	`operate_name` varchar(255) not null comment "æ“ä½œåç§°",
+	`operate_code` char(8) not null comment "æ“ä½œæƒé™ä»£ç ï¼Œä½¿ç”¨32ä½äºŒè¿›åˆ¶æ ‡è¯†ï¼Œå­˜å‚¨ä¸º16è¿›åˆ¶æ•°å€¼",
+	`intercept_url` varchar(255) comment "æ‹¦æˆªurl"
+	`parent_operate_id` int unsigned not null default '0' comment "çˆ¶æ“ä½œID",
 	primary key (`operate_id`)	
 ) engine=innodb default charset='utf8'
 
-/*È¨ÏŞ¿ØÖÆÖ÷±í**************---*/
+/*æƒé™æ§åˆ¶ä¸»è¡¨**************---*/
 
 
-/*×ÊÔ´-----------------*/
-/*ÓÃ»§×é*/
+/*èµ„æº-----------------*/
+/*ç”¨æˆ·ç»„*/
 create table `user_groups`(
-	`user_group_id` int unsigned not null auto_increment comment "ÓÃ»§×éID",
-	`user_group_name` varchar(120) not null comment "ÓÃ»§×éÃû³Æ",
-	`parent_user_group_id` int not null default "0" comment "ÓÃ»§×é¸¸ID",
+	`user_group_id` int unsigned not null auto_increment comment "ç”¨æˆ·ç»„ID",
+	`user_group_name` varchar(120) not null comment "ç”¨æˆ·ç»„åç§°",
+	`parent_user_group_id` int not null default "0" comment "ç”¨æˆ·ç»„çˆ¶ID",
 	primary key (`user_group_id`)
 )engine=innodb default charset="utf8"
-/*²Ëµ¥±í*/
+/*èœå•è¡¨*/
 create table `menus`(
-	`menu_id` int unsigned not null auto_increment comment "²Ëµ¥ID",
-	`menu_name` varchar(30) not null comment "²Ëµ¥Ãû³Æ",
-	`menu_url` varchar(255) not null comment "²Ëµ¥Á´½ÓµØÖ·",
+	`menu_id` int unsigned not null auto_increment comment "èœå•ID",
+	`menu_name` varchar(30) not null comment "èœå•åç§°",
+	`menu_url` varchar(255) not null comment "èœå•é“¾æ¥åœ°å€",
 	`parent_menu_id` int unsigned not null default "0",
 	primary key (`menu_id`)
 )engine=innodb default charset='utf8'
-/*Ò³ÃæÔªËØ*/
+/*é¡µé¢å…ƒç´ */
 create table `elements` (
-	`element_id` int unsigned not null auto_increment comment "ÔªËØID",
-	`element_code` varchar(50) comment "Ò³ÃæÔªËØ±àºÅ",
+	`element_id` int unsigned not null auto_increment comment "å…ƒç´ ID",
+	`element_code` varchar(50) comment "é¡µé¢å…ƒç´ ç¼–å·",
 	primary key (`element_id`)
 ) engine=innodb default charset='utf8'
-/*ÎÄ¼ş*/
+/*æ–‡ä»¶*/
 create table `files` (
-	`file_id` int unsigned not null auto_increment comment "ÎÄ¼ş±àºÅID",
-	`file_name` varchar(200) not null comment "ÎÄ¼şÃû³Æ",
-	`file_path` varchar(255) comment "ÎÄ¼şÂ·¾¶",
+	`file_id` int unsigned not null auto_increment comment "æ–‡ä»¶ç¼–å·ID",
+	`file_name` varchar(200) not null comment "æ–‡ä»¶åç§°",
+	`file_path` varchar(255) comment "æ–‡ä»¶è·¯å¾„",
 	primary key ('file_id')
 ) engine = innodb default charset='utf8'
 
-/*×ÊÔ´---------------------*/
+/*èµ„æº---------------------*/
 
 
-/*ÓÃ»§£¬½ÇÉ«£¬ÓÃ»§×é¶ÔÓ¦¹ØÏµ±í---------------*/
-/*ÓÃ»§×éÓëÓÃ»§¹ØÁª±í*/
+/*ç”¨æˆ·ï¼Œè§’è‰²ï¼Œç”¨æˆ·ç»„å¯¹åº”å…³ç³»è¡¨---------------*/
+/*ç”¨æˆ·ç»„ä¸ç”¨æˆ·å…³è”è¡¨*/
 create table `user_groups_users_relation`(
-	`user_group_id` int unsigned not null comment "ÓÃ»§×éID",
-	`user_id`int unsigned not null comment "ÓÃ»§ID"	
+	`user_group_id` int unsigned not null comment "ç”¨æˆ·ç»„ID",
+	`user_id`int unsigned not null comment "ç”¨æˆ·ID"	
 	
 ) engine=innodb default charset='utf8'
-/*ÓÃ»§×é½ÇÉ«¹ØÁª±í*/
+/*ç”¨æˆ·ç»„è§’è‰²å…³è”è¡¨*/
 create table `user_groups_roles_relation` (
-	`role_id` int unsigned not null comment "½ÇÉ«ID",
-	`user_group_id` int unsigned not null comment "ÓÃ»§×éID"
+	`role_id` int unsigned not null comment "è§’è‰²ID",
+	`user_group_id` int unsigned not null comment "ç”¨æˆ·ç»„ID"
 ) engine=innodb default charset="utf8"
-/*ÓÃ»§½ÇÉ«¹ØÁª±í*/
+/*ç”¨æˆ·è§’è‰²å…³è”è¡¨*/
 create table `users_rols_relation`(
-	`user_id` int unsigned not null comment "ÓÃ»§ID",
-	`role_id` int unsigned not null comment "½ÇÉ«ID"
+	`user_id` int unsigned not null comment "ç”¨æˆ·ID",
+	`role_id` int unsigned not null comment "è§’è‰²ID"
 ) engine=innodb default charset='utf8'
-/*ÓÃ»§£¬½ÇÉ«£¬ÓÃ»§×é¶ÔÓ¦¹ØÏµ±í---------------*/
+/*ç”¨æˆ·ï¼Œè§’è‰²ï¼Œç”¨æˆ·ç»„å¯¹åº”å…³ç³»è¡¨---------------*/
 
 
-/*È¨ÏŞ£¬¹¦ÄÜ²Ù×÷£¬×ÊÔ´¶ÔÓ¦±í------------------*/
-/*½ÇÉ«È¨ÏŞ¹ØÁª±í*/
+/*æƒé™ï¼ŒåŠŸèƒ½æ“ä½œï¼Œèµ„æºå¯¹åº”è¡¨------------------*/
+/*è§’è‰²æƒé™å…³è”è¡¨*/
 create table `roles_permissions_relation`(
-	`role_id` int unsigned not null comment "½ÇÉ«ID",
-	`perm_id` int unsigned not null comment "È¨ÏŞID"
+	`role_id` int unsigned not null comment "è§’è‰²ID",
+	`perm_id` int unsigned not null comment "æƒé™ID"
 ) engine=innodb default charset='utf8'
-/*È¨ÏŞÓë²Ù×÷¹ØÁª±í*/
+/*æƒé™ä¸æ“ä½œå…³è”è¡¨*/
 create table `roles_operates_relation`(
-	`perm_id` int unsigned not null comment "È¨ÏŞID",
-	`operate_id` int unsigned not null comment "²Ù×÷ID"
+	`perm_id` int unsigned not null comment "æƒé™ID",
+	`operate_id` int unsigned not null comment "æ“ä½œID"
 ) engine=innodb default charset='utf8'
-/*È¨ÏŞ²Ëµ¥¹ØÁª±í*/
+/*æƒé™èœå•å…³è”è¡¨*/
 create table `permissions_menus_relation`(
- `perm_id` int unsigned not null comment "È¨ÏŞID",
- `menu_id` int unsigned not null comment "²Ëµ¥ID"
+ `perm_id` int unsigned not null comment "æƒé™ID",
+ `menu_id` int unsigned not null comment "èœå•ID"
 ) engine=innodb default charset='utf8'
-/*È¨ÏŞÒ³ÃæÔªËØ¹ØÁª±í*/
+/*æƒé™é¡µé¢å…ƒç´ å…³è”è¡¨*/
 create table `permissions_elements_relation`(
-	`perm_id` int unsigned not null comment "È¨ÏŞID",
-	`element_id` int unsigned not null comment "ÔªËØID"
+	`perm_id` int unsigned not null comment "æƒé™ID",
+	`element_id` int unsigned not null comment "å…ƒç´ ID"
 ) engine=innodb default charset="utf8"
-/*È¨ÏŞÎÄ¼ş¹ØÁª±í*/
+/*æƒé™æ–‡ä»¶å…³è”è¡¨*/
 create table `permissions_files_relation`(
-	`perm_id` int unsigned not null comment "È¨ÏŞID",
-	`file_id` int unsigned not null comment "ÎÄ¼şID"
+	`perm_id` int unsigned not null comment "æƒé™ID",
+	`file_id` int unsigned not null comment "æ–‡ä»¶ID"
 ) engine=innodb default charset="utf8"
-/*È¨ÏŞ£¬¹¦ÄÜ²Ù×÷£¬×ÊÔ´¶ÔÓ¦±í------------------*/
+/*æƒé™ï¼ŒåŠŸèƒ½æ“ä½œï¼Œèµ„æºå¯¹åº”è¡¨------------------*/
 
-/*ÓÃ»§ÏêÇé±í*/
+/*ç”¨æˆ·è¯¦æƒ…è¡¨*/
 create table `users_info`(
-	`user_id` int unsigned not null comment "ÓÃ»§ID"
-	`student_id` int unsigned not null comment "Ñ§ºÅ"
-	`user_pwd` varchar(120) comment "ÓÃ»§ÃÜÂë",
-	`user_sex` tinyint comment "ĞÔ±ğ£º1¡¢ÄĞ£»2¡¢Å®",
-	`user_birthday` datetime comment "³öÉúÈÕÆÚ",
+	`user_id` int unsigned not null comment "ç”¨æˆ·ID"
+	`student_id` int unsigned not null comment "å­¦å·"
+	`user_pwd` varchar(120) comment "ç”¨æˆ·å¯†ç ",
+	`user_sex` tinyint comment "æ€§åˆ«ï¼š1ã€ç”·ï¼›2ã€å¥³",
+	`user_birthday` datetime comment "å‡ºç”Ÿæ—¥æœŸ",
 	`user_email` varchar(120) comment "email",
-	`user_phone` varchar(20) comment "µç»°ºÅÂë",
-	`user_class_id` int unsigned not null comment "ÓÃ»§ËùÊô°à¼¶",
-	`user_grade_id` int unsigned not null comment "ÓÃ»§ËùÊôÄê¼¶",
-	`belongs_type` tinyint unsigned not null comment "ËùÊôÀàĞÍ£º1¡¢Ñ§Éú£¬2¡¢½ÌÖ°¹¤£¬3¡¢",
-	`note` varchar(120) comment "±¸×¢",
-	`is_del` tinyint unsigned not null default 0 comment "ÊÇ·ñÉ¾³ı"
+	`user_phone` varchar(20) comment "ç”µè¯å·ç ",
+	`user_class_id` int unsigned not null comment "ç”¨æˆ·æ‰€å±ç­çº§",
+	`user_grade_id` int unsigned not null comment "ç”¨æˆ·æ‰€å±å¹´çº§",
+	`belongs_type` tinyint unsigned not null comment "æ‰€å±ç±»å‹ï¼š1ã€å­¦ç”Ÿï¼Œ2ã€æ•™èŒå·¥ï¼Œ3ã€",
+	`note` varchar(120) comment "å¤‡æ³¨",
+	`is_del` tinyint unsigned not null default 0 comment "æ˜¯å¦åˆ é™¤"
 	
 ) engine=innodb default charset='utf8'
 
-/*°à¼¶±í*/
+/*ç­çº§è¡¨*/
 create table `users_classs_grades_relation` (
-	`class_id` int unsigned not null auto_increment  comment "°à¼¶ID",
-	`class_name` varchar(50) not null comment "°à¼¶Ãû³Æ",
-	`grade_id` int unsigned not null comment "Äê¼¶ID",
+	`class_id` int unsigned not null auto_increment  comment "ç­çº§ID",
+	`class_name` varchar(50) not null comment "ç­çº§åç§°",
+	`grade_id` int unsigned not null comment "å¹´çº§ID",
 	primary key ('class_id')
 ) engine=innodb default charset='utf8'
 
-/* Äê¼¶±í*/
+/* å¹´çº§è¡¨*/
 create table `class`(
-	`grade_id` int unsigned not null auto_increment comment "Äê¼¶ID",
-	`grade_name` varchar(120) not null comment "Äê¼¶Ãû³Æ"
+	`grade_id` int unsigned not null auto_increment comment "å¹´çº§ID",
+	`grade_name` varchar(120) not null comment "å¹´çº§åç§°"
 ) engine=innodb default charset="utf8"
 
-/*ÂÛÎÄ¿ÎÌâ±í*/
+/*è®ºæ–‡è¯¾é¢˜è¡¨*/
 create table `paper` (
-	`paper_id` int unsigned not null comment "ÂÛÎÄid",
-	`paper_name` varchar(255) not null comment "ÂÛÎÄ±êÌâ",
-	`description` text comment "ÃèÊö",
-	`need_nums` int unsigend not null default "0" comment "ĞèÒªµÄÈËÊı",
-	`user_id` int unsigend not null comment "Ö¸µ¼½ÌÊ¦id",
-	`note` varchar(255) comment "±¸×¢"
+	`paper_id` int unsigned not null comment "è®ºæ–‡id",
+	`paper_name` varchar(255) not null comment "è®ºæ–‡æ ‡é¢˜",
+	`description` text comment "æè¿°",
+	`need_nums` int unsigend not null default "0" comment "éœ€è¦çš„äººæ•°",
+	`user_id` int unsigend not null comment "æŒ‡å¯¼æ•™å¸ˆid",
+	`note` varchar(255) comment "å¤‡æ³¨"
 
 ) engine = innodb default charset="utf8"
 
-/*ÂÛÎÄÑ¡ÔñÉèÖÃ*/
+/*è®ºæ–‡é€‰æ‹©è®¾ç½®*/
 create table `select_papter`(
 	`id` int unsigned not null auto_increment
 ) engine=innodb default charset="utf8"
 
-/*²¿ÃÅ±í*/
+/*éƒ¨é—¨è¡¨*/
 create table `departments` (
-	`department_id` int unsigned not null auto_increment comment "²¿ÃÅID",
-	`department_name` varchar(50) not null comment "²¿ÃÅÃû³Æ",
-	`descript` varchar(255) comment "²¿ÃÅÃèÊö",
-	`is_del` tinyint default 0 comment "ÊÇ·ñÊÇÒÑÉ¾³ı£¬Ä¬ÈÏÎª0£¬1±íÊ¾É¾³ı"
+	`department_id` int unsigned not null auto_increment comment "éƒ¨é—¨ID",
+	`department_name` varchar(50) not null comment "éƒ¨é—¨åç§°",
+	`descript` varchar(255) comment "éƒ¨é—¨æè¿°",
+	`is_del` tinyint default 0 comment "æ˜¯å¦æ˜¯å·²åˆ é™¤ï¼Œé»˜è®¤ä¸º0ï¼Œ1è¡¨ç¤ºåˆ é™¤"
 	
 ) engine=innodb default charset="utf8"
-/*Ñ§ÉúÂÛÎÄĞÅÏ¢*/
+/*å­¦ç”Ÿè®ºæ–‡ä¿¡æ¯*/
 create table `student_paper` (
-	`paper_id` int unsigned not null auto_increment comment "ÂÛÎÄID"
+	`paper_id` int unsigned not null auto_increment comment "è®ºæ–‡ID"
 
 ) engine = innodb default charset="utf8"
 /**/

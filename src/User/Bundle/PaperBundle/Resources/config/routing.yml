@@ -1,3 +1,6 @@
 user_paper_homepage:
     path:     /
     defaults: { _controller: UserPaperBundle:Default:index }
+user_paper_homepage_login:
+    path:     /login
+    defaults: { _controller: UserPaperBundle:Default:login }

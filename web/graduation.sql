@@ -1,4 +1,4 @@
-/*穿件数据库*/
+/*创建数据库*/
 create database `graduation`;
 /*人员按照时间和班级分表 */
 

@@ -17,6 +17,6 @@ class DefaultController extends Controller
         return $this->render('UserPaperBundle:Default:index.html.twig', array('name' => "xieyaokun"));
     }
     public function loginAction(Request $request){
-    	return $this->render("UserPaperBundle:Admin:login.html.twig");
+    	return $this->render("UserPaperBundle:admin:login.html.twig");
     }
 }

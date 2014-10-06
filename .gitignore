@@ -10,3 +10,7 @@
 /bin/
 /composer.phar
 /components
+/web/metronic_rtl
+/web/theme_rtl
+/web/templates
+/web/assets

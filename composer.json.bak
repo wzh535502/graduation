@@ -53,7 +53,9 @@
 		"rackspace/php-opencloud" : "dev-master",
 		"camdram/sphinx-realtime-bundle" : "dev-master",
 		"egeloen/google-map-bundle" : "2.2.*@dev",
-		"d4rkstar/phpagi" : "dev-master"
+		"d4rkstar/phpagi" : "dev-master",
+		"besimple/soap": "0.3.*@dev",
+		"besimple/sso-auth-bundle": "1.0.*@dev"
 	},
 	"require-dev" : {
 		"sensio/generator-bundle" : "~2.3"

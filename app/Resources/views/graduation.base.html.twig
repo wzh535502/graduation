@@ -1,15 +1,20 @@
-{% include 'graduation.header.base.html.twig' %}
-{% block header %}这个是头部{% endblock %}
-{% block siderbar %} sidebar{% endblock %}
-{% block quick_sidebar %}quick sidebar{% endblock %}
-{% block conent %}content{% endblock %}
-{% block footer %}
-	{% include  'graduation.footer.html.twig'  %}
+{% block begin %}
+	{% include '::graduation.begin.html.twig' %}
 {% endblock %}
-{% block javascript %}
-	{% include 'graduation.javascript.base.html.twig' %}
+{% block head %}
+	{% include '::graduation.head.html.twig' %}
+{% endblock %}
+{% block body %}
+    {% include '::graduation.body.html.twig' %}
+{% endblock %}
+{% block footer %}
+	{% include '::graduation.footer.html.twig' %}
+{% endblock %}
+{% block endAge%}
+  {% block javascript %}
+	{% include '::graduation.javascript.base.html.twig' %}
+  {% endblock %}
 {% endblock %}
 
-</body>
-<!-- END BODY -->
-</html>
+
+
